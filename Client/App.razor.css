@@ -1,0 +1,31 @@
+.actions {
+    padding: 0;
+    border: none;
+}
+
+    .actions[disabled] {
+        pointer-events: none;
+    }
+
+.action button {
+    width: 100%;
+}
+
+.log {
+    font-family: 'Cascadia Mono', monospace;
+    font-size: 80%;
+    white-space: pre;
+    overflow-x: auto;
+    width: 100%;
+    max-width: 780px;
+}
+
+    .log .log-line {
+        display: flex;
+        min-height: 1em;
+    }
+
+    .log .time-stamp {
+        color: #888;
+        margin-right: 10px;
+    }

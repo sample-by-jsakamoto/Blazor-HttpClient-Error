@@ -1,0 +1,25 @@
+﻿@using Toolbelt.Blazor
+@inject HttpClient HttpClient
+@inject IHttpClientInterceptor Interceptor
+
+<fieldset class="actions" disabled="@this.Sending">
+    @foreach (var action in this.Actions)
+    {
+        <div class="action">
+            <button @onclick="action.Action">@action.Case</button>
+        </div>
+    }
+</fieldset>
+
+<fieldset>
+    <div class="log">
+
+        @foreach (var line in this.LogLines)
+        {
+            <div class="log-line">
+                <span class="time-stamp">@line.TimeStamp?.ToString("HH:mm:ss.fff")</span>
+                <span class="text">@line.Text</span>
+            </div>
+        }
+    </div>
+</fieldset>
