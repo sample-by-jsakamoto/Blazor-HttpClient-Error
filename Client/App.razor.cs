@@ -50,7 +50,7 @@ public partial class App
         // Server respond CORS error     ➡ e.Response is null
         // Offline                       ➡ e.Response is null
         this.Sending = false;
-        this.WriteLine($"AFTER  SEND HTTP {e.Request.Method} {e.Request.RequestUri} -> {(e.Response == null ? "e.Response is null" : "HTTP " + e.Response.StatusCode.ToString())}");
+        this.WriteLine($"AFTER  SEND HTTP {e.Request.Method} {e.Request.RequestUri} -> {(e.Exception != null ? $"{e.Exception.GetType().Name}: {e.Exception.Message}" : "HTTP " + e.Response.StatusCode.ToString())}");
     }
 
     // Server response timed out     ➡                                   "TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 5 seconds elapsing."
